@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The AI Operating System for Property Professionals</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --deep:   #4a2a50;
+  --light:  #e4deec;
+  --pale:   #f7f3fd;
+  --cream:  #fbf6db;
+  --gold:   #e8c153;
+  --gold-d: #c9920d;
+  --white:  #ffffff;
+  --body:   #38203e;
+  --muted:  #8a6892;
+  --border: #ddd4e8;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { font-size:16px; }
+body { font-family: 'Poppins', sans-serif; background: var(--pale); color: var(--body); min-height: 100vh; }
+.bastia { font-family: 'Bastia', 'Georgia', 'Times New Roman', serif; font-weight: 700; }
+.topband { background: var(--cream); border-bottom: 1px solid rgba(228,222,236,0.7); padding: 10px 28px; text-align: center; }
+.topband span { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+.hero { background: var(--white); border-bottom: 1px solid var(--border); padding: 64px 28px 52px; text-align: center; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: -80px; left: -80px; width: 280px; height: 280px; border-radius: 50%; background: radial-gradient(circle, rgba(228,222,236,0.5) 0%, transparent 70%); pointer-events: none; }
+.hero::after { content: ''; position: absolute; bottom: -100px; right: -60px; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(232,193,83,0.08) 0%, transparent 70%); pointer-events: none; }
+.hero-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+.hero-tag { display: inline-flex; align-items: center; gap: 7px; background: var(--cream); border: 1px solid rgba(232,193,83,0.4); border-radius: 100px; padding: 6px 16px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--deep); margin-bottom: 28px; opacity: 0; animation: fadeUp 0.5s 0.1s ease forwards; }
+.hero-tag span { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); display: inline-block; }
+.hero-h1 { font-family: 'Bastia', 'Georgia', serif; font-weight: 700; font-size: clamp(2.2rem, 6vw, 3.8rem); line-height: 1.08; letter-spacing: 0.025em; text-transform: uppercase; color: var(--deep); margin-bottom: 20px; opacity: 0; animation: fadeUp 0.6s 0.2s ease forwards; }
+.hero-h1 .for-line { display: block; font-size: 0.38em; font-family: 'Poppins', sans-serif; font-weight: 400; font-style: italic; letter-spacing: 0.03em; text-transform: none; color: var(--muted); margin-top: 8px; white-space: nowrap; }
+.hero-sub { font-size: clamp(0.88rem, 1.8vw, 1.05rem); font-weight: 400; color: var(--muted); line-height: 1.75; margin-bottom: 0; opacity: 0; animation: fadeUp 0.6s 0.32s ease forwards; }
+.hero-sub b { color: var(--body); font-weight: 600; }
+.body-wrap { max-width: 1020px; margin: 0 auto; padding: 52px 28px 72px; opacity: 0; animation: fadeUp 0.65s 0.5s ease forwards; }
+.cols { display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: start; }
+@media (max-width: 700px) { .cols { grid-template-columns: 1fr; gap: 36px; } .hero-h1 { font-size: 2rem; } }
+.copy-intro { font-size: 0.9rem; line-height: 1.85; color: var(--muted); margin-bottom: 32px; padding: 20px 22px; background: var(--cream); border-radius: 12px; border-left: 4px solid var(--gold); }
+.copy-intro b { color: var(--body); font-weight: 600; }
+.what-inside-lbl { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--deep); margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
+.what-inside-lbl::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.blist { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+.blist li { display: flex; align-items: flex-start; gap: 14px; padding: 16px 14px; border-radius: 10px; font-size: 0.875rem; line-height: 1.65; color: var(--body); transition: background 0.22s ease, transform 0.22s ease; cursor: default; opacity: 0; animation: fadeUp 0.45s ease forwards; }
+.blist li:nth-child(1) { animation-delay: 0.62s; }
+.blist li:nth-child(2) { animation-delay: 0.72s; }
+.blist li:nth-child(3) { animation-delay: 0.82s; }
+.blist li:nth-child(4) { animation-delay: 0.92s; }
+.blist li:nth-child(5) { animation-delay: 1.02s; }
+.blist li:hover { background: var(--white); transform: translateX(4px); box-shadow: 0 2px 12px rgba(74,42,80,0.06); }
+.blist li:hover .dot { background: var(--gold); }
+.blist li:hover .dot svg path { stroke: var(--deep); }
+.dot { width: 22px; height: 22px; border-radius: 50%; background: var(--deep); flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center; transition: background 0.22s; box-shadow: 0 2px 8px rgba(74,42,80,0.2); }
+.blist li b { font-weight: 600; color: var(--deep); }
+.card { background: var(--white); border-radius: 20px; border: 1px solid var(--border); overflow: hidden; box-shadow: 0 2px 0 var(--light), 0 20px 60px rgba(74,42,80,0.10), 0 4px 16px rgba(74,42,80,0.05); }
+.card-topbar { height: 4px; background: linear-gradient(90deg, var(--deep) 0%, var(--gold) 50%, var(--deep) 100%); }
+.card-inner { padding: 32px 28px 28px; }
+.card-title { font-family: 'Bastia', 'Georgia', serif; font-weight: 700; font-size: 1.4rem; color: var(--deep); text-align: center; margin-bottom: 22px; }
+.book-wrap { display: flex; justify-content: center; margin: 0 auto 26px; perspective: 1000px; }
+.book { position: relative; width: 148px; height: 196px; transform-style: preserve-3d; transform: rotateY(-18deg) rotateX(2deg); transition: transform 0.4s ease; cursor: default; filter: drop-shadow(8px 14px 22px rgba(74,42,80,0.28)); }
+.book:hover { transform: rotateY(-8deg) rotateX(1deg); }
+.book-spine { position: absolute; top: 0; left: -16px; width: 16px; height: 100%; background: linear-gradient(to right, #c8c0d2, #e4deec); transform: rotateY(90deg); transform-origin: right center; border-radius: 1px 0 0 1px; }
+.book-spine::after { content: 'THE AI OPERATING SYSTEM · SIMPLY STAFFED'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(90deg); white-space: nowrap; font-family: 'Poppins', sans-serif; font-size: 0.34rem; font-weight: 600; letter-spacing: 0.12em; color: #7a5882; text-transform: uppercase; }
+.book-front { position: absolute; inset: 0; background: #f9f7ff; border-radius: 1px 4px 4px 1px; border: 1px solid #e0d8ec; display: flex; flex-direction: column; overflow: hidden; }
+.book-front::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--gold) 0%, #f5d878 50%, var(--gold) 100%); }
+.book-front::after { content: ''; position: absolute; top: 4px; right: 0; width: 4px; height: calc(100% - 8px); background: repeating-linear-gradient(to bottom, #ece7f5 0px, #ece7f5 1px, #f5f2fb 1px, #f5f2fb 3px); border-radius: 0 2px 2px 0; }
+.book-content { display: flex; flex-direction: column; justify-content: space-between; height: 100%; padding: 14px 14px 12px; position: relative; z-index: 1; }
+.book-brand { display: inline-block; font-family: 'Poppins', sans-serif; font-size: 0.42rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--deep); background: var(--cream); border: 1px solid rgba(232,193,83,0.5); padding: 2px 6px; border-radius: 2px; align-self: flex-start; }
+.book-main-title { font-family: 'Bastia', 'Georgia', serif; font-weight: 700; font-size: 0.88rem; line-height: 1.3; color: var(--deep); margin-top: 10px; letter-spacing: 0.01em; }
+.book-footer-sub { font-family: 'Poppins', sans-serif; font-size: 0.46rem; font-weight: 400; font-style: italic; line-height: 1.5; color: #7a5882; margin-top: auto; padding-top: 10px; border-top: 1px solid #e8e0f0; }
+.book-shadow { position: absolute; bottom: -10px; left: 8px; right: -8px; height: 10px; background: rgba(74,42,80,0.18); border-radius: 0 0 6px 6px; filter: blur(6px); transform: scaleY(0.6); transform-origin: top; }
+.fields { display: flex; flex-direction: column; gap: 12px; margin-bottom: 14px; }
+.fl { display: flex; flex-direction: column; gap: 4px; }
+.fl-lbl { font-size: 0.71rem; font-weight: 600; color: var(--deep); letter-spacing: 0.01em; }
+.fl-lbl sup { color: #c0405a; font-size: 0.75em; }
+.fi { padding: 11px 13px; background: var(--pale); border: 1.5px solid var(--border); border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 0.83rem; color: var(--body); outline: none; width: 100%; transition: border-color 0.2s, background 0.2s, box-shadow 0.2s; }
+.fi::placeholder { color: #c4b0cc; }
+.fi:focus { border-color: var(--deep); background: var(--white); box-shadow: 0 0 0 3px rgba(74,42,80,0.07); }
+.phone-row { display:flex; gap:7px; }
+.fi-flag { padding: 11px 9px; background: var(--pale); border: 1.5px solid var(--border); border-radius: 8px; font-size: 0.82rem; outline: none; cursor: pointer; flex-shrink: 0; font-family: 'Poppins', sans-serif; transition: border-color 0.2s; }
+.fi-flag:focus { border-color: var(--deep); }
+.fi-sel { padding: 11px 30px 11px 13px; background: var(--pale); border: 1.5px solid var(--border); border-radius: 8px; font-family: 'Poppins',sans-serif; font-size: 0.83rem; color: var(--body); outline: none; appearance: none; cursor: pointer; width: 100%; background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%234a2a50' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; transition: border-color 0.2s; }
+.fi-sel:focus { border-color: var(--deep); box-shadow: 0 0 0 3px rgba(74,42,80,0.07); }
+.consents { display: flex; flex-direction: column; gap: 9px; margin-bottom: 18px; }
+.cbox { display: flex; align-items: flex-start; gap: 9px; }
+.cbox input[type="checkbox"] { flex-shrink: 0; margin-top: 3px; width: 13px; height: 13px; accent-color: var(--deep); cursor: pointer; }
+.cbox label { font-size: 0.67rem; line-height: 1.55; color: #a090aa; cursor: pointer; }
+.btn { width: 100%; padding: 15px 20px; background: var(--gold); color: var(--deep); font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.9rem; border: none; border-radius: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; position: relative; overflow: hidden; transition: background 0.22s, transform 0.18s, box-shadow 0.22s; box-shadow: 0 4px 20px rgba(232,193,83,0.5); }
+.btn::before { content: ''; position: absolute; top: 0; left: -80%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent); transform: skewX(-18deg); transition: left 0.55s ease; }
+.btn:hover::before { left: 150%; }
+.btn:hover { background: var(--gold-d); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(232,193,83,0.6); }
+.btn:active { transform: translateY(0); }
+.btn-arr { transition: transform 0.2s; }
+.btn:hover .btn-arr { transform: translateX(3px); }
+.secure { text-align: center; font-size: 0.67rem; color: #b0a0ba; margin-top: 11px; display: flex; align-items: center; justify-content: center; gap: 5px; }
+@keyframes fadeUp { from { opacity:0; transform: translateY(16px); } to { opacity:1; transform: translateY(0); } }
+@media (max-width: 480px) { .body-wrap { padding: 36px 16px 56px; } .card-inner { padding: 26px 18px 22px; } }
+</style>
+</head>
+<body>
+
+<div class="topband">
+  <span>Property Professionals &nbsp;*&nbsp; Get your Free AI Operating System Playbook</span>
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag"><span></span>Free Download</div>
+    <h1 class="hero-h1 bastia">
+      The AI<br/>Operating<br/>System
+      <em class="for-line">for Property Professionals</em>
+    </h1>
+    <p class="hero-sub">
+      A practical guide to implementing AI across your entire property business.<br/>
+      <b style="white-space:nowrap;">Without hiring extra staff, learning to code, or wasting money on tools you don't need.</b>
+    </p>
+  </div>
+</div>
+
+<div class="body-wrap">
+  <div class="cols">
+    <div>
+      <p class="copy-intro">
+        Most property businesses are still running on manual follow-ups,
+        WhatsApp threads, and spreadsheets that don't talk to each other.
+        This playbook shows you a better way. A structured system
+        to put AI to work inside your business, starting now.
+      </p>
+      <p class="what-inside-lbl">What's Inside</p>
+      <ul class="blist">
+        <li>
+          <span class="dot"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span><b>The 4-Step Deployment Plan.</b> Audit your business, build one simple workflow, test it, then scale it. A clear repeatable process anyone on your team can follow.</span>
+        </li>
+        <li>
+          <span class="dot"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span><b>Best Tools &amp; Workflow Examples.</b> See exactly which AI tools work best for property, and how to connect them into simple workflows your team can follow without any technical knowledge.</span>
+        </li>
+        <li>
+          <span class="dot"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span><b>Your Property Business Intelligence Brief.</b> Fill this in once and paste it into any AI tool. It tells AI everything about your business, your clients, your rules, your voice.</span>
+        </li>
+        <li>
+          <span class="dot"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span><b>The RCCF Prompt Framework.</b> Four simple parts — Role, Context, Command, Format — that help you get clear, useful answers from AI every time you use it.</span>
+        </li>
+        <li>
+          <span class="dot"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span><b>Your 30-Day Quick-Start Checklist.</b> Daily actions from setting up your account to running your first live AI workflow, with simple milestones you can track.</span>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="card">
+        <div class="card-topbar"></div>
+        <div class="card-inner">
+          <p class="card-title bastia">Get Instant Access</p>
+          <div class="book-wrap">
+            <div class="book">
+              <div class="book-spine"></div>
+              <div class="book-front">
+                <div class="book-content">
+                  <div>
+                    <span class="book-brand">Simply Staffed</span>
+                    <div class="book-main-title">The AI Operating System</div>
+                  </div>
+                  <div>
+                    <p class="book-footer-sub">A practical guide to implementing AI across your entire property business.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="book-shadow"></div>
+            </div>
+          </div>
+
+          <div class="fields">
+            <div class="fl">
+              <label class="fl-lbl">First Name <sup>*</sup></label>
+              <input id="f-name" class="fi" type="text" placeholder="Your first name"/>
+            </div>
+            <div class="fl">
+              <label class="fl-lbl">Email Address <sup>*</sup></label>
+              <input id="f-email" class="fi" type="email" placeholder="your@email.com"/>
+            </div>
+            <div class="fl">
+              <label class="fl-lbl">Mobile <sup>*</sup></label>
+              <div class="phone-row">
+                <select id="f-flag" class="fi-flag">
+                  <option value="+44">&#127468;&#127463; +44</option>
+                  <option value="+63">&#127477;&#127469; +63</option>
+                  <option value="+1">&#127482;&#127480; +1</option>
+                  <option value="+61">&#127462;&#127482; +61</option>
+                  <option value="+353">&#127470;&#127466; +353</option>
+                </select>
+                <input id="f-phone" class="fi" type="tel" placeholder="Mobile number" style="flex:1"/>
+              </div>
+            </div>
+            <div class="fl">
+              <label class="fl-lbl">I am a&#8230; <sup>*</sup></label>
+              <select id="f-role" class="fi-sel">
+                <option value="" disabled selected></option>
+                <option>Estate Agency</option>
+                <option>Letting Agency</option>
+                <option>Property Management Company</option>
+                <option>Serviced Accommodation Agency</option>
+                <option>SA Operator</option>
+                <option>HMO Operator</option>
+                <option>Property Business Owner</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <p id="form-error" style="display:none;font-size:0.75rem;color:#c0405a;margin-bottom:12px;text-align:center;"></p>
+
+          <div id="form-success" style="display:none;text-align:center;padding:20px 0;">
+            <div style="font-size:2rem;margin-bottom:10px;">&#127881;</div>
+            <p style="font-family:'Bastia','Georgia',serif;font-weight:700;font-size:1.1rem;color:var(--deep);margin-bottom:8px;">You're all set!</p>
+            <p style="font-size:0.82rem;color:var(--muted);line-height:1.6;">Check your inbox &#8212; the playbook is on its way.<br/>If you don't see it, check your spam folder.</p>
+          </div>
+
+          <div id="form-fields-wrap">
+            <div class="consents">
+              <div class="cbox">
+                <input type="checkbox" id="c1"/>
+                <label for="c1">I'm happy to receive updates and reminders related to my playbook access. Reply STOP to opt out at any time.</label>
+              </div>
+              <div class="cbox">
+                <input type="checkbox" id="c2"/>
+                <label for="c2">I'd like to receive property AI tips and useful resources. I can unsubscribe whenever I like.</label>
+              </div>
+            </div>
+            <button id="submit-btn" class="btn" onclick="submitForm()">
+              Send Me the Free Playbook
+              <span class="btn-arr">&#8594;</span>
+            </button>
+            <p class="secure">
+              <svg width="10" height="12" viewBox="0 0 10 12" fill="none">
+                <rect x="0.75" y="4.75" width="8.5" height="6.5" rx="1.25" stroke="#b0a0ba" stroke-width="1.2"/>
+                <path d="M3 4.75V3a2 2 0 0 1 4 0v1.75" stroke="#b0a0ba" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+              No cost. No spam. Instant download.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw8xXcCnW8jWwIvyRhRxy862pykZM5NFCx81KN3OE19PcRmGrCSyLFA6y0lECcPenDP/exec';
+
+  function submitForm() {
+    var name  = document.getElementById('f-name').value.trim();
+    var email = document.getElementById('f-email').value.trim();
+    var flag  = document.getElementById('f-flag').value;
+    var phone = document.getElementById('f-phone').value.trim();
+    var role  = document.getElementById('f-role').value;
+
+    if (!name)  { showError('Please enter your first name.'); return; }
+    if (!email || email.indexOf('@') === -1) { showError('Please enter a valid email address.'); return; }
+    if (!phone) { showError('Please enter your mobile number.'); return; }
+    if (!role)  { showError('Please select your role.'); return; }
+
+    document.getElementById('form-error').style.display = 'none';
+
+    var btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    var body = 'name='  + encodeURIComponent(name)
+             + '&email=' + encodeURIComponent(email)
+             + '&phone=' + encodeURIComponent(flag + ' ' + phone)
+             + '&role='  + encodeURIComponent(role);
+
+    fetch(SCRIPT_URL, {
+      method:  'POST',
+      mode:    'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body:    body
+    })
+    .then(function() {
+      // no-cors returns opaque response — assume success and show thank you
+      document.getElementById('form-fields-wrap').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    })
+    .catch(function(err) {
+      btn.disabled = false;
+      btn.innerHTML = 'Send Me the Free Playbook <span class="btn-arr">&#8594;</span>';
+      showError('Something went wrong. Please try again.');
+    });
+  }
+
+  function showError(msg) {
+    var err = document.getElementById('form-error');
+    err.textContent = msg;
+    err.style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
