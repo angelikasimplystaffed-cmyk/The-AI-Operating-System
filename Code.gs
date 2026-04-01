@@ -75,8 +75,8 @@ function doPost(e) {
       // Header
       '<tr><td style="background:#4a2a50;border-radius:12px 12px 0 0;padding:32px 36px 24px;text-align:center;">' +
       '<p style="margin:0 0 4px;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#e8c153;">SIMPLY STAFFED AI</p>' +
-      '<h1 style="margin:0 0 6px;font-size:22px;font-weight:700;color:#ffffff;">The AI Operating System</h1>' +
-      '<p style="margin:0;font-size:13px;font-style:italic;color:#e4deec;">for Property Professionals</p>' +
+      '<h1 style="margin:0 0 6px;font-size:18px;font-weight:700;color:#ffffff;">The AI Operating System</h1>' +
+      '<p style="margin:0;font-size:11px;font-style:italic;color:#e4deec;">for Property Professionals</p>' +
       '</td></tr>' +
 
       // Body
