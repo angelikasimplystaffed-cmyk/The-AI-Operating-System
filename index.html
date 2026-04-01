@@ -22,8 +22,12 @@
 html { font-size:16px; }
 body { font-family: 'Poppins', sans-serif; background: var(--pale); color: var(--body); min-height: 100vh; }
 .bastia { font-family: 'Bastia', 'Georgia', 'Times New Roman', serif; font-weight: 700; }
+
+/* TOP BAND */
 .topband { background: var(--cream); border-bottom: 1px solid rgba(228,222,236,0.7); padding: 10px 28px; text-align: center; }
 .topband span { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+
+/* HERO */
 .hero { background: var(--white); border-bottom: 1px solid var(--border); padding: 64px 28px 52px; text-align: center; position: relative; overflow: hidden; }
 .hero::before { content: ''; position: absolute; top: -80px; left: -80px; width: 280px; height: 280px; border-radius: 50%; background: radial-gradient(circle, rgba(228,222,236,0.5) 0%, transparent 70%); pointer-events: none; }
 .hero::after { content: ''; position: absolute; bottom: -100px; right: -60px; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(232,193,83,0.08) 0%, transparent 70%); pointer-events: none; }
@@ -34,6 +38,8 @@ body { font-family: 'Poppins', sans-serif; background: var(--pale); color: var(-
 .hero-h1 .for-line { display: block; font-size: 0.38em; font-family: 'Poppins', sans-serif; font-weight: 400; font-style: italic; letter-spacing: 0.03em; text-transform: none; color: var(--muted); margin-top: 8px; white-space: nowrap; }
 .hero-sub { font-size: clamp(0.88rem, 1.8vw, 1.05rem); font-weight: 400; color: var(--muted); line-height: 1.75; margin-bottom: 0; opacity: 0; animation: fadeUp 0.6s 0.32s ease forwards; }
 .hero-sub b { color: var(--body); font-weight: 600; }
+
+/* BODY */
 .body-wrap { max-width: 1020px; margin: 0 auto; padding: 52px 28px 72px; opacity: 0; animation: fadeUp 0.65s 0.5s ease forwards; }
 .cols { display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: start; }
 @media (max-width: 700px) { .cols { grid-template-columns: 1fr; gap: 36px; } .hero-h1 { font-size: 2rem; } }
@@ -53,23 +59,67 @@ body { font-family: 'Poppins', sans-serif; background: var(--pale); color: var(-
 .blist li:hover .dot svg path { stroke: var(--deep); }
 .dot { width: 22px; height: 22px; border-radius: 50%; background: var(--deep); flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center; transition: background 0.22s; box-shadow: 0 2px 8px rgba(74,42,80,0.2); }
 .blist li b { font-weight: 600; color: var(--deep); }
+
+/* CARD */
 .card { background: var(--white); border-radius: 20px; border: 1px solid var(--border); overflow: hidden; box-shadow: 0 2px 0 var(--light), 0 20px 60px rgba(74,42,80,0.10), 0 4px 16px rgba(74,42,80,0.05); }
 .card-topbar { height: 4px; background: linear-gradient(90deg, var(--deep) 0%, var(--gold) 50%, var(--deep) 100%); }
 .card-inner { padding: 32px 28px 28px; }
 .card-title { font-family: 'Bastia', 'Georgia', serif; font-weight: 700; font-size: 1.4rem; color: var(--deep); text-align: center; margin-bottom: 22px; }
+
+/* BOOK — dark violet cover, yellow title, white subcopies */
 .book-wrap { display: flex; justify-content: center; margin: 0 auto 26px; perspective: 1000px; }
-.book { position: relative; width: 148px; height: 196px; transform-style: preserve-3d; transform: rotateY(-18deg) rotateX(2deg); transition: transform 0.4s ease; cursor: default; filter: drop-shadow(8px 14px 22px rgba(74,42,80,0.28)); }
+.book { position: relative; width: 148px; height: 196px; transform-style: preserve-3d; transform: rotateY(-18deg) rotateX(2deg); transition: transform 0.4s ease; cursor: default; filter: drop-shadow(8px 14px 22px rgba(74,42,80,0.45)); }
 .book:hover { transform: rotateY(-8deg) rotateX(1deg); }
-.book-spine { position: absolute; top: 0; left: -16px; width: 16px; height: 100%; background: linear-gradient(to right, #c8c0d2, #e4deec); transform: rotateY(90deg); transform-origin: right center; border-radius: 1px 0 0 1px; }
-.book-spine::after { content: 'THE AI OPERATING SYSTEM · SIMPLY STAFFED'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(90deg); white-space: nowrap; font-family: 'Poppins', sans-serif; font-size: 0.34rem; font-weight: 600; letter-spacing: 0.12em; color: #7a5882; text-transform: uppercase; }
-.book-front { position: absolute; inset: 0; background: #f9f7ff; border-radius: 1px 4px 4px 1px; border: 1px solid #e0d8ec; display: flex; flex-direction: column; overflow: hidden; }
-.book-front::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--gold) 0%, #f5d878 50%, var(--gold) 100%); }
-.book-front::after { content: ''; position: absolute; top: 4px; right: 0; width: 4px; height: calc(100% - 8px); background: repeating-linear-gradient(to bottom, #ece7f5 0px, #ece7f5 1px, #f5f2fb 1px, #f5f2fb 3px); border-radius: 0 2px 2px 0; }
-.book-content { display: flex; flex-direction: column; justify-content: space-between; height: 100%; padding: 14px 14px 12px; position: relative; z-index: 1; }
-.book-brand { display: inline-block; font-family: 'Poppins', sans-serif; font-size: 0.42rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--deep); background: var(--cream); border: 1px solid rgba(232,193,83,0.5); padding: 2px 6px; border-radius: 2px; align-self: flex-start; }
-.book-main-title { font-family: 'Bastia', 'Georgia', serif; font-weight: 700; font-size: 0.88rem; line-height: 1.3; color: var(--deep); margin-top: 10px; letter-spacing: 0.01em; }
-.book-footer-sub { font-family: 'Poppins', sans-serif; font-size: 0.46rem; font-weight: 400; font-style: italic; line-height: 1.5; color: #7a5882; margin-top: auto; padding-top: 10px; border-top: 1px solid #e8e0f0; }
-.book-shadow { position: absolute; bottom: -10px; left: 8px; right: -8px; height: 10px; background: rgba(74,42,80,0.18); border-radius: 0 0 6px 6px; filter: blur(6px); transform: scaleY(0.6); transform-origin: top; }
+
+/* spine — darker purple */
+.book-spine { position: absolute; top: 0; left: -14px; width: 14px; height: 100%; background: linear-gradient(to right, #2a1030, #3a1d40); transform: rotateY(90deg); transform-origin: right center; border-radius: 1px 0 0 1px; }
+.book-spine::after { content: 'THE AI OPERATING SYSTEM'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(90deg); white-space: nowrap; font-family: 'Poppins', sans-serif; font-size: 0.3rem; font-weight: 600; letter-spacing: 0.14em; color: rgba(232,193,83,0.7); text-transform: uppercase; }
+
+/* front — solid dark violet */
+.book-front { position: absolute; inset: 0; background: #4a2a50; border-radius: 1px 4px 4px 1px; overflow: hidden; }
+
+/* gold top accent */
+.book-front::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--gold) 0%, #f5d878 50%, var(--gold) 100%); }
+
+.book-content { display: flex; flex-direction: column; justify-content: space-between; height: 100%; padding: 16px 12px 14px; position: relative; z-index: 1; }
+
+/* title area — maximised */
+.book-title-area { flex: 1; display: flex; flex-direction: column; justify-content: flex-start; padding-top: 6px; }
+
+.book-main-title {
+  font-family: 'Bastia', 'Georgia', serif;
+  font-weight: 700;
+  font-size: 1.28rem;
+  line-height: 1.15;
+  color: var(--gold);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.book-for-line {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.48rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+}
+
+/* bottom copy — very small */
+.book-footer-sub {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.38rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.55);
+}
+
+/* book shadow */
+.book-shadow { position: absolute; bottom: -10px; left: 8px; right: -8px; height: 10px; background: rgba(74,42,80,0.3); border-radius: 0 0 6px 6px; filter: blur(6px); transform: scaleY(0.6); transform-origin: top; }
+
+/* FIELDS */
 .fields { display: flex; flex-direction: column; gap: 12px; margin-bottom: 14px; }
 .fl { display: flex; flex-direction: column; gap: 4px; }
 .fl-lbl { font-size: 0.71rem; font-weight: 600; color: var(--deep); letter-spacing: 0.01em; }
@@ -86,6 +136,8 @@ body { font-family: 'Poppins', sans-serif; background: var(--pale); color: var(-
 .cbox { display: flex; align-items: flex-start; gap: 9px; }
 .cbox input[type="checkbox"] { flex-shrink: 0; margin-top: 3px; width: 13px; height: 13px; accent-color: var(--deep); cursor: pointer; }
 .cbox label { font-size: 0.67rem; line-height: 1.55; color: #a090aa; cursor: pointer; }
+
+/* CTA */
 .btn { width: 100%; padding: 15px 20px; background: var(--gold); color: var(--deep); font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.9rem; border: none; border-radius: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; position: relative; overflow: hidden; transition: background 0.22s, transform 0.18s, box-shadow 0.22s; box-shadow: 0 4px 20px rgba(232,193,83,0.5); }
 .btn::before { content: ''; position: absolute; top: 0; left: -80%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent); transform: skewX(-18deg); transition: left 0.55s ease; }
 .btn:hover::before { left: 150%; }
@@ -94,16 +146,19 @@ body { font-family: 'Poppins', sans-serif; background: var(--pale); color: var(-
 .btn-arr { transition: transform 0.2s; }
 .btn:hover .btn-arr { transform: translateX(3px); }
 .secure { text-align: center; font-size: 0.67rem; color: #b0a0ba; margin-top: 11px; display: flex; align-items: center; justify-content: center; gap: 5px; }
+
 @keyframes fadeUp { from { opacity:0; transform: translateY(16px); } to { opacity:1; transform: translateY(0); } }
 @media (max-width: 480px) { .body-wrap { padding: 36px 16px 56px; } .card-inner { padding: 26px 18px 22px; } }
 </style>
 </head>
 <body>
 
+<!-- TOP BAND — updated text -->
 <div class="topband">
-  <span>Property Professionals &nbsp;*&nbsp; Get your Free AI Operating System Playbook</span>
+  <span>Simply Staffed AI supporting property businesses with AI automations and systems</span>
 </div>
 
+<!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-tag"><span></span>Free Download</div>
@@ -118,8 +173,11 @@ body { font-family: 'Poppins', sans-serif; background: var(--pale); color: var(-
   </div>
 </div>
 
+<!-- BODY -->
 <div class="body-wrap">
   <div class="cols">
+
+    <!-- LEFT COPY -->
     <div>
       <p class="copy-intro">
         Most property businesses are still running on manual follow-ups,
@@ -143,7 +201,7 @@ body { font-family: 'Poppins', sans-serif; background: var(--pale); color: var(-
         </li>
         <li>
           <span class="dot"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <span><b>The RCCF Prompt Framework.</b> Four simple parts — Role, Context, Command, Format — that help you get clear, useful answers from AI every time you use it.</span>
+          <span><b>The RCCF Prompt Framework.</b> Four simple parts &#8212; Role, Context, Command, Format &#8212; that help you get clear, useful answers from AI every time you use it.</span>
         </li>
         <li>
           <span class="dot"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -152,19 +210,22 @@ body { font-family: 'Poppins', sans-serif; background: var(--pale); color: var(-
       </ul>
     </div>
 
+    <!-- RIGHT FORM -->
     <div>
       <div class="card">
         <div class="card-topbar"></div>
         <div class="card-inner">
           <p class="card-title bastia">Get Instant Access</p>
+
+          <!-- BOOK MOCKUP — dark violet, yellow title, white subcopies -->
           <div class="book-wrap">
             <div class="book">
               <div class="book-spine"></div>
               <div class="book-front">
                 <div class="book-content">
-                  <div>
-                    <span class="book-brand">Simply Staffed</span>
-                    <div class="book-main-title">The AI Operating System</div>
+                  <div class="book-title-area">
+                    <div class="book-main-title">The AI<br/>Operating<br/>System</div>
+                    <div class="book-for-line">For Property Professionals</div>
                   </div>
                   <div>
                     <p class="book-footer-sub">A practical guide to implementing AI across your entire property business.</p>
@@ -175,6 +236,7 @@ body { font-family: 'Poppins', sans-serif; background: var(--pale); color: var(-
             </div>
           </div>
 
+          <!-- FIELDS -->
           <div class="fields">
             <div class="fl">
               <label class="fl-lbl">First Name <sup>*</sup></label>
@@ -184,8 +246,9 @@ body { font-family: 'Poppins', sans-serif; background: var(--pale); color: var(-
               <label class="fl-lbl">Email Address <sup>*</sup></label>
               <input id="f-email" class="fi" type="email" placeholder="your@email.com"/>
             </div>
+            <!-- PHONE — optional -->
             <div class="fl">
-              <label class="fl-lbl">Mobile <sup>*</sup></label>
+              <label class="fl-lbl">Mobile <span style="font-weight:400;color:var(--muted);font-size:0.68rem;">(optional)</span></label>
               <div class="phone-row">
                 <select id="f-flag" class="fi-flag">
                   <option value="+44">&#127468;&#127463; +44</option>
@@ -213,8 +276,10 @@ body { font-family: 'Poppins', sans-serif; background: var(--pale); color: var(-
             </div>
           </div>
 
+          <!-- ERROR -->
           <p id="form-error" style="display:none;font-size:0.75rem;color:#c0405a;margin-bottom:12px;text-align:center;"></p>
 
+          <!-- SUCCESS -->
           <div id="form-success" style="display:none;text-align:center;padding:20px 0;">
             <div style="font-size:2rem;margin-bottom:10px;">&#127881;</div>
             <p style="font-family:'Bastia','Georgia',serif;font-weight:700;font-size:1.1rem;color:var(--deep);margin-bottom:8px;">You're all set!</p>
@@ -223,19 +288,23 @@ body { font-family: 'Poppins', sans-serif; background: var(--pale); color: var(-
 
           <div id="form-fields-wrap">
             <div class="consents">
+              <!-- CHECKBOX 1 — Playbook_Reminders_Consent -->
               <div class="cbox">
                 <input type="checkbox" id="c1"/>
                 <label for="c1">I'm happy to receive updates and reminders related to my playbook access. Reply STOP to opt out at any time.</label>
               </div>
+              <!-- CHECKBOX 2 — Marketing_Consent_AI_Tips -->
               <div class="cbox">
                 <input type="checkbox" id="c2"/>
                 <label for="c2">I'd like to receive property AI tips and useful resources. I can unsubscribe whenever I like.</label>
               </div>
             </div>
+
             <button id="submit-btn" class="btn" onclick="submitForm()">
               Send Me the Free Playbook
               <span class="btn-arr">&#8594;</span>
             </button>
+
             <p class="secure">
               <svg width="10" height="12" viewBox="0 0 10 12" fill="none">
                 <rect x="0.75" y="4.75" width="8.5" height="6.5" rx="1.25" stroke="#b0a0ba" stroke-width="1.2"/>
@@ -248,6 +317,7 @@ body { font-family: 'Poppins', sans-serif; background: var(--pale); color: var(-
         </div>
       </div>
     </div>
+
   </div>
 </div>
 
@@ -260,10 +330,13 @@ body { font-family: 'Poppins', sans-serif; background: var(--pale); color: var(-
     var flag  = document.getElementById('f-flag').value;
     var phone = document.getElementById('f-phone').value.trim();
     var role  = document.getElementById('f-role').value;
+    // Capture checkbox values
+    var c1    = document.getElementById('c1').checked ? 'YES' : 'NO';
+    var c2    = document.getElementById('c2').checked ? 'YES' : 'NO';
 
+    // Validation — phone is optional now
     if (!name)  { showError('Please enter your first name.'); return; }
     if (!email || email.indexOf('@') === -1) { showError('Please enter a valid email address.'); return; }
-    if (!phone) { showError('Please enter your mobile number.'); return; }
     if (!role)  { showError('Please select your role.'); return; }
 
     document.getElementById('form-error').style.display = 'none';
@@ -274,8 +347,10 @@ body { font-family: 'Poppins', sans-serif; background: var(--pale); color: var(-
 
     var body = 'name='  + encodeURIComponent(name)
              + '&email=' + encodeURIComponent(email)
-             + '&phone=' + encodeURIComponent(flag + ' ' + phone)
-             + '&role='  + encodeURIComponent(role);
+             + '&phone=' + encodeURIComponent(phone ? flag + ' ' + phone : '')
+             + '&role='  + encodeURIComponent(role)
+             + '&c1='    + encodeURIComponent(c1)
+             + '&c2='    + encodeURIComponent(c2);
 
     fetch(SCRIPT_URL, {
       method:  'POST',
@@ -284,11 +359,10 @@ body { font-family: 'Poppins', sans-serif; background: var(--pale); color: var(-
       body:    body
     })
     .then(function() {
-      // no-cors returns opaque response — assume success and show thank you
       document.getElementById('form-fields-wrap').style.display = 'none';
       document.getElementById('form-success').style.display = 'block';
     })
-    .catch(function(err) {
+    .catch(function() {
       btn.disabled = false;
       btn.innerHTML = 'Send Me the Free Playbook <span class="btn-arr">&#8594;</span>';
       showError('Something went wrong. Please try again.');
