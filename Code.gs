@@ -174,7 +174,6 @@ function checkReplies() {
         sheet.getRange(rowNum, 12).setValue(snippet.replace(/\n/g, ' '));
 
         // Mark the message as read so it is not processed again
-        msg.markRead();
       }
     }
   }
