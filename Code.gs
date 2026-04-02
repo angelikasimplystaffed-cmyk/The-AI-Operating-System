@@ -114,6 +114,7 @@ function doPost(e) {
 
     GmailApp.sendEmail(email, EMAIL_SUBJECT, plainText, {
       name:        SENDER_NAME,
+      replyTo:     NOTIFY_EMAIL,
       htmlBody:    htmlBody,
       attachments: [pdfBlob]
     });
