@@ -5,7 +5,7 @@
 var SHEET_ID          = '11e6rtm2-u8UG1ipaZm_Ms5_IG2lFxKxUQrUQ6LHG6Us';
 var PDF_DRIVE_ID      = '14UlCH1wPHhuhfC1aHP6KR4IPoPPWOdF4';
 var SENDER_NAME       = 'Simply Staffed AI';
-var UNSUBSCRIBE_EMAIL = 'unsubscribe@simplystaffed.com';
+var UNSUBSCRIBE_EMAIL = 'angelika@simplystaffed.com';
 var WEBSITE_URL       = 'https://simplystaffed.com';
 var EMAIL_SUBJECT     = 'Your Free AI Operating System Playbook';
 
