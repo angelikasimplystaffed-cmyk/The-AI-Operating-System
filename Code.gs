@@ -3,7 +3,7 @@
 // ═══════════════════════════════════════════════════════════════
 
 var SHEET_ID      = '11e6rtm2-u8UG1ipaZm_Ms5_IG2lFxKxUQrUQ6LHG6Us';
-var PDF_DRIVE_ID  = '14UlCH1wPHhuhfC1aHP6KR4IPoPPWOdF4';
+var PDF_DRIVE_ID  = '1WmB2HixLrDHuRhSrW86ozqTCz39rmEvi';
 var SENDER_NAME   = 'Simply Staffed AI';
 var NOTIFY_EMAIL  = 'angelika.simplystaffed@gmail.com';
 var EMAIL_SUBJECT = 'Your Free AI Operating System Playbook';
